@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  font-family: 'Arial', sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* height: 100vh; */
+  text-align: center;
+ 
 }
 
-.App-link {
+ .title{
+  /* font-size: 3em; */
+  margin-bottom: 0.5em;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 3s forwards 0.5s;
   color: #61dafb;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  text-align: center;
 
-@keyframes App-logo-spin {
-  from {
+} 
+
+ .subtitle {
+  margin-bottom: 0.5em;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 4s forwards 1s;
+  color: #61dafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  text-align: center;
+
+} 
+
+/* Additional h1 styles and animations */
+.tech {
+  margin-bottom: 0.5em;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 5s forwards 1.5s;
+  color: #61dafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  text-align: center;
+} 
+
+ p {
+  font-size: 1.5em;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards 1s;
+} 
+
+
+
+ @keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+/* Background Animation */
+ body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #010A19, #000C2C, #00113D, #09235F);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  z-index: -1;
+ 
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+} 
+
+/* Stars */
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+} 
+
+ .star-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+::selection {
+  color: pink;
+  background-color: purple;
+}
+
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); 
+  /* clip-path:circle();  */
+ animation: twinkling 0.5s infinite alternate;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.star:hover {
+  background-color: #ffcc00;
+  transform: scale(1.2);
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shooting {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 100vh) rotate(45deg);
+  }
+} 
+
+/* Parallax Effect */
+.star:hover {
+  animation: none;
+}
+
+.star[data-speed] {
+  transition: transform 0.1s ease-out;
+}
+
+
