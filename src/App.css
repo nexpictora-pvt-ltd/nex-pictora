@@ -109,8 +109,8 @@ body {
 }
 
 ::selection {
-  color: pink;
-  background-color: purple;
+  color: black;
+  background-color: #61dafb;
 }
 
 .star {
